@@ -3,10 +3,5 @@ function solution(price, money, count) {
     for(i=1; i<=count ; i++){
         answer += price * i
     }
-    if(money >= answer){
-        return 0;
-    }else{
-        return answer - money;
-    }
-
+    return money >= answer ? 0 : answer - money;
 }
