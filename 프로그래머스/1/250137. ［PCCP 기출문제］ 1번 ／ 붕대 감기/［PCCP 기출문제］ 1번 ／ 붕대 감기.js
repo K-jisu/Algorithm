@@ -25,41 +25,28 @@ function solution(bandage, health, attacks) {
             attacks.splice(0,1)
             healCnt = 0;
 
-        
             // 공격 후 체력이 0 이거나 작으면 return -1
             if(currentHealth <= 0){
                 return - 1;
             }
         }else{
+            // 초당 회복력씩 증가
             currentHealth += healPerRound;
+            // 연속 횟수 증가
             healCnt += 1;
-            // console.log(healCnt)
             if(healCnt === healRound){
+                // 연속 횟수가 bandage[0]만큼 도달하면 bandage[2]만큼 추가 회복
                 currentHealth += addHeal
                 healCnt = 0;
             }
             if(currentHealth >= health){
+                // 최대 health 초과 불가능
                 currentHealth = health;
             }
 
-            // 최대 health 초과 불가능
-            // 초당 회복력씩 증가
-            // 연속 횟수 증가
-            // 연속 횟수가 bandage[0]만큼 도달하면 bandage[2]만큼 추가 회복
-        }
-        console.log(currentHealth)        
+        }   
 
     }
-
-
-
-
-    // 해당하는 초에 공격이 들어오면 그만큼 health 차감
-    // health 차감 후 연속 성공 횟수 reset
-    // for문 다 돌면 남은 health return
-    // 중간에 health가 0 이하가 되면 return -1
-    
-    
     
     return currentHealth;
 }
