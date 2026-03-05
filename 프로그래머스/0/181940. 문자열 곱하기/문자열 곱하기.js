@@ -1,10 +1,8 @@
 function solution(my_string, k) {
-    var answer = [];
-    const array = [...my_string]
+    var answer = "";
     for(let i=0; i<k; i++){
-        for(let j=0; j<array.length; j++){
-            answer.push(array[j])
-        }
+        answer += my_string
     }
-    return answer.join("");
+    
+    return answer
 }
